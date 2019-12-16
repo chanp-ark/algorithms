@@ -6,9 +6,10 @@ function spiral (arrOfArrs, idx=0, lowerLim = 0, upperLim = arrOfArrs.length-1) 
   
   // if index is equal to lowerLim
   if (idx === lowerLim) {
+    let curArr = arrOfArrs[idx]
     // for loop and log each element
-    for (let i = 0; i < arrOfArrs[idx].length; i++) {
-      console.log(arrOfArrs[idx][i])
+    for (let i = 0; i < curArr.length; i++) {
+      console.log(curArr[i])
     }
     // add one to lower lim
     lowerLim++
@@ -17,9 +18,9 @@ function spiral (arrOfArrs, idx=0, lowerLim = 0, upperLim = arrOfArrs.length-1) 
     // while index is lower than upperLim
     while (idx < upperLim) {
       // console log the last element
-      console.log(arrOfArrs[idx][arrOfArrs[idx].length-1])
+      console.log(curArr[curArr.length-1])
       // splice the last element
-      arrOfArrs[idx].splice(arrOfArrs[idx].length-1, 1)
+      curArr.splice(curArr.length-1, 1)
       // add one to index
       idx++
     }
@@ -32,9 +33,10 @@ function spiral (arrOfArrs, idx=0, lowerLim = 0, upperLim = arrOfArrs.length-1) 
   
   // if index is equal to upper lim
   if (idx === upperLim) {
+    let curArr = arrOfArrs[idx]
     // for loop and log each element in reverse
-    for (let j = arrOfArrs[idx].length-1; j >= 0; j--) {
-      console.log(arrOfArrs[idx][j])
+    for (let j = curArr.length-1; j >= 0; j--) {
+      console.log(curArr[j])
     }
     // subtract one from upper lim
     upperLim--
@@ -43,9 +45,9 @@ function spiral (arrOfArrs, idx=0, lowerLim = 0, upperLim = arrOfArrs.length-1) 
     // while index is greater than lower lim
     while (idx > lowerLim) {
       // console log the first element
-      console.log(arrOfArrs[idx][0])
+      console.log(curArr[0])
       // splice the first element
-      arrOfArrs[idx].splice(0, 1)
+      curArr.splice(0, 1)
       // subtract one from index
       idx--
     }
@@ -65,8 +67,7 @@ const grid2 = [
   [6,  7,  8,  9,  10],
   [11, 12, 13, 14, 15],
   [16, 17, 18, 19, 20],
-  [21, 22, 23, 24, 25], 
-  [26, 27, 28, 29, 30]
+  [21, 22, 23, 24, 25]
 ]
 
 const grid3 = [
